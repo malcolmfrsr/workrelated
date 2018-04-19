@@ -1,0 +1,27 @@
+{
+  "boop": {
+    "doop": [
+      "koot",
+      "dook",
+      "sssss"
+    ]
+  },
+  "derp": [
+    {
+      "name": "digger",
+      "designation": "doggie"
+    },
+    {
+      "name": "kobus",
+      "designation": "doggie"
+    },
+    {
+      "name": "fred",
+      "designation": "frog"
+    },
+    {
+      "name": "custom",
+      "designation": "frog"
+    }
+  ]
+}

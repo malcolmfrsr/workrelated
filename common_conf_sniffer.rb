@@ -134,10 +134,17 @@ class Hash
       elsif (merged[k].kind_of? Array) && (self[k].kind_of? Array)
         # To Do : need a better way to check if all objects re a hash.
         if (merged[k][0].kind_of? Hash) && (self[k][0].kind_of? Hash)
-          merged_str = merged[k].map(&:to_s)
-          _self_str = self[k].map(&:to_s)
-          intersection_str_arr = merged_str & _self_str
-          intersection[k] = intersection_str_arr.map { |a| eval(a) }
+         # merged_str = merged[k].map(&:to_s)
+         # _self_str = self[k].map(&:to_s)
+         # intersection_str_arr = merged_str & _self_str
+         # intersection[k] = intersection_str_arr.map { |a| eval(a) }
+
+          intersection_str_arr = []
+          for i in (0..self[k].length)
+            break if i >= self[k].length
+            intersection_str_arr.push(self[k][i].intersection(merged[k][i]))
+          end
+          intersection[k] = intersection_str_arr
         else
           intersection[k] = merged[k] & self[k]
         end
